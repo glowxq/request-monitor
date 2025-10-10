@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "网络请求监听器",
+  "version": "3.0.0",
+  "description": "监听指定域名的网络请求，记录错误并生成CURL命令",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webRequest",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "网络请求监听器",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
+  },
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "*.css", "*.html", "src/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

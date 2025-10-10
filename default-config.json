@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "exportTime": "2025-08-20T10:00:00.000Z",
+  "description": "网络请求监听器默认配置文件",
+  "config": {
+    "apiPrefixes": [
+      "*.example.com",
+      "*.example.cn"
+    ],
+    "includeSuccessRequests": true,
+    "onlyRecordFetchXHR": true,
+    "maxRecords": 1000,
+    "autoExport": false,
+    "enableConsoleLog": false,
+    "urlReplaceRules": [
+      {
+        "from": "https://example.com/xxxx",
+        "to": "http://localhost:8080",
+        "enabled": true
+      }
+    ],
+    "responseValidationRules": [
+      {
+        "key": "code",
+        "expectedValue": "0",
+        "operator": "equals",
+        "enabled": true
+      }
+    ],
+    "quickCopyConfig": {
+      "responseHeaderField": "X-Trace-Id",
+      "responseBodyField": "requestId",
+      "enableDebugInfo": true
+    },
+    "domainConfig": {
+      "enabled": true,
+      "domains": [
+        "*.example.com",
+        "*.example.cn",
+        "localhost"
+      ]
+    },
+    "enableFloatingSidebar": false,
+    "sidebarPosition": "right",
+    "sidebarOpacity": 0.95,
+    "enableFloatingBall": true,
+    "floatingBallPosition": "right",
+    "devToolsSidebarWidth": 400
+  },
+  "metadata": {
+    "name": "默认配置",
+    "author": "网络请求监听器",
+    "tags": ["default", "development", "api-testing"],
+    "usage": "适用于常见的API开发和测试场景",
+    "features": [
+      "支持多个API前缀监听",
+      "URL重定向到本地开发环境",
+      "响应验证规则检查",
+      "错误请求自动标记"
+    ]
+  }
+}
